@@ -1,4 +1,4 @@
-import { AbstractAction } from '../actions/abstract.action';
+import { AbstractAction } from '../actions';
 import { CommanderStatic } from 'commander';
 
 export abstract class AbstractCommand<Input, Options> {

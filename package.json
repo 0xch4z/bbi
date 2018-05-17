@@ -11,6 +11,8 @@
   },
   "scripts": {},
   "dependencies": {
+    "@types/aws-sdk": "^2.7.0",
+    "aws-sdk": "^2.241.1",
     "chalk": "^2.4.1",
     "cli-spinner": "^0.2.8",
     "commander": "^2.15.1",
