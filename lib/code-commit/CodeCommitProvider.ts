@@ -1,24 +1,36 @@
-import { Config, CodeCommit } from 'aws-sdk';
+import { Config, CodeCommit, AWSError } from 'aws-sdk';
+import * as git from 'simple-git';
 
 const config = {
-  region: 'east-us-1'
+  region: 'us-east-1'
 }
 
-class CodeCommitProvider {
+export class CodeCommitProvider {
   private static _client = new CodeCommit(config);
-  public static async clone(name: string): Promise<void> {
+  public static clone(name: string): Promise<void> {
+    return new Promise(resolve => {
+      this._client.getRepository({
+        repositoryName: name
+      }, (err: AWSError, data: CodeCommit.GetRepositoryOutput) => {
+        if (err) throw err;
+
+      });
+    });
+  }
+
+  // @todo
+  public static async search(/*term: string*/): Promise<void> {
     
   }
 
-  public static async search(term: string): Promise<void> {
-
-  }
-
-  public static async create(name: string): Promise<void> {
-
-  }
-
-  public static async doesRepoExist(name: string): Promise<void> {
-    
+  public static create(name: string): Promise<CodeCommit.RepositoryMetadata> {
+    return new Promise(resolve => {
+      this._client.createRepository({
+        repositoryName: name
+      }, (err: AWSError, data: CodeCommit.CreateRepositoryOutput) => {
+        if (err) throw err;
+        resolve(data.repositoryMetadata);
+      });
+    });
   }
 }

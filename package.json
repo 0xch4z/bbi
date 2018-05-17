@@ -16,7 +16,8 @@
     "chalk": "^2.4.1",
     "cli-spinner": "^0.2.8",
     "commander": "^2.15.1",
-    "inquirer": "^5.2.0"
+    "inquirer": "^5.2.0",
+    "simple-git": "^1.92.0"
   },
   "devDependencies": {
     "@types/chalk": "^2.2.0",
