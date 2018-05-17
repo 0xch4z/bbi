@@ -1,0 +1,26 @@
+{
+  "name": "bb-gen",
+  "version": "0.1.0",
+  "description": "",
+  "main": "index.js",
+  "author": "Brooks Bell Inc.",
+  "private": true,
+  "license": "MIT",
+  "bin": {
+    "cli": "dist/bin/bbi.js"
+  },
+  "scripts": {},
+  "dependencies": {
+    "chalk": "^2.4.1",
+    "cli-spinner": "^0.2.8",
+    "commander": "^2.15.1",
+    "inquirer": "^5.2.0"
+  },
+  "devDependencies": {
+    "@types/chalk": "^2.2.0",
+    "@types/cli-spinner": "^0.2.0",
+    "@types/inquirer": "^0.0.41",
+    "@types/node": "^10.1.0",
+    "typescript": "^2.8.3"
+  }
+}
